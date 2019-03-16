@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pertemuan Dua</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <tr>
+                <td colspan="4" class="text-center">Kalkulator</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="hasil" id="hasil" size="100" readonly>
+                    <input type="text" name="kalkulator" id="kalkulator" size="100"> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" class="btn btn-secondary btn-block" value="CA" onclick= "hapusSemua()"></td>
+                <td colspan="2"><input type="button" class="btn btn-secondary btn-block" value="CE" onclick="hapusSatu()"></td>
+            </tr>
+            <tr>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="1" onclick="document.getElementById('kalkulator').value += '1'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="2" onclick="document.getElementById('kalkulator').value += '2'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="3" onclick="document.getElementById('kalkulator').value += '3'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-warning btn-block" value="+" onclick="document.getElementById('kalkulator').value += '+'"></td>
+            </tr>
+            <tr>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="4" onclick="document.getElementById('kalkulator').value += '4'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="5" onclick="document.getElementById('kalkulator').value += '5'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="6" onclick="document.getElementById('kalkulator').value += '6'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-warning btn-block" value="-" onclick="document.getElementById('kalkulator').value += '-'"></td>
+            </tr>
+            <tr>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="7" onclick="document.getElementById('kalkulator').value += '7'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="8" onclick="document.getElementById('kalkulator').value += '8'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="9" onclick="document.getElementById('kalkulator').value += '9'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-warning btn-block" value="x" onclick="document.getElementById('kalkulator').value += '*'"></td>
+            </tr>
+            <tr>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="." onclick="document.getElementById('kalkulator').value += '.'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-secondary btn-block" value="0" onclick="document.getElementById('kalkulator').value += '0'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-warning btn-block" value=":" onclick="document.getElementById('kalkulator').value += '/'"></td>
+                <td class="col-md-2"><input type="button" class="btn btn-warning btn-block" value="=" onclick="document.getElementById('hasil').value += eval(document.getElementById('kalkulator').value)"></td>
+            </tr>
+        </table>
+    </div>    
+</body>
+
+<script>
+    function hapusSemua(){
+        document.getElementById("kalkulator").value = "";
+    }
+    function hapusSatu(){
+        var tulis = document.getElementById("kalkulator").value;
+        var hapusSub = tulis.substr(0,tulis.length-1);
+
+        document.getElementById("kalkulator").value = hapusSub;
+    }
+</script>
+</html>
